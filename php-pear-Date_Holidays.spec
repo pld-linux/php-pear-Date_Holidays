@@ -1,0 +1,61 @@
+%include	/usr/lib/rpm/macros.php
+%define		_class		Date
+%define		_subclass	Holidays
+%define		_status		alpha
+%define		_pearname	%{_class}_%{_subclass}
+
+Summary:	%{_pearname} - Driver based class to calculate holidays.
+Summary(pl):	%{_pearname} -
+Name:		php-pear-%{_pearname}
+Version:	0.9.0
+Release:	1
+License:	PHP 2.02
+Group:		Development/Languages/PHP
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	2b8db44e0c310972258d7459d2702379
+URL:		http://pear.php.net/package/Date_Holidays/
+BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+Requires:	php-pear
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+Date_Holidays helps you calculating the dates and titles of
+holidays and other special celebrations. The calculation is
+driver-based so it is easy to add new drivers that calculate
+a country's holidays. The methods of the class can be used
+to get a holiday's date and title in various languages.
+
+In PEAR status of this package is: %{_status}.
+
+#%description -l pl
+#
+#Ta klasa ma w PEAR status: %{_status}.
+
+%prep
+%setup -q -c
+
+%build
+cd %{_pearname}-%{version}/examples
+cat addingTranslations.php | sed 's,/var/lib/pear/data/Date_Holidays,%{php_pear_dir}/%{_class}/%{_subclass},' > a
+mv -f a addingTranslations.php
+
+%install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/{Driver,lang/{Christian,Germany,UNO}}
+
+install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
+install %{_pearname}-%{version}/%{_subclass}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}
+install %{_pearname}-%{version}/%{_subclass}/Driver/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/Driver
+install %{_pearname}-%{version}/lang/Christian/* $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/lang/Christian
+install %{_pearname}-%{version}/lang/Germany/* $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/lang/Germany
+install %{_pearname}-%{version}/lang/UNO/* $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/lang/UNO
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc %{_pearname}-%{version}/examples
+%{php_pear_dir}/%{_class}/*.php
+%{php_pear_dir}/%{_class}/%{_subclass}
