@@ -4,7 +4,7 @@
 %define		_status		alpha
 %define		_pearname	%{_class}_%{_subclass}
 
-Summary:	%{_pearname} - Driver based class to calculate holidays
+Summary:	%{_pearname} - driver based class to calculate holidays
 Summary(pl):	%{_pearname} - klasa oparta na sterownikach do wyliczania ¶wi±t
 Name:		php-pear-%{_pearname}
 Version:	0.13.0
