@@ -4,8 +4,8 @@
 %define		_status		alpha
 %define		_pearname	%{_class}_%{_subclass}
 
-Summary:	%{_pearname} - Driver based class to calculate holidays.
-Summary(pl):	%{_pearname} -
+Summary:	%{_pearname} - Driver based class to calculate holidays
+Summary(pl):	%{_pearname} - klasa oparta na sterownikach do wyliczania ¶wi±t
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 Release:	1
@@ -28,9 +28,14 @@ to get a holiday's date and title in various languages.
 
 In PEAR status of this package is: %{_status}.
 
-#%description -l pl
-#
-#Ta klasa ma w PEAR status: %{_status}.
+%description -l pl
+Klasa Date_Holidays pomaga przy wyliczaniu dat i nazw ¶wi±t oraz
+innych specjalnych okazji. Obliczenia s± oparte na sterownikach, wiêc
+³atwo mo¿na dodaæ nowe sterowniki obliczaj±ce ¶wiêta narodowe. Metody
+klasy mog± byæ u¿ywane do uzyskania dat i nazw ¶wi±t w ró¿nych
+jêzykach.
+
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
