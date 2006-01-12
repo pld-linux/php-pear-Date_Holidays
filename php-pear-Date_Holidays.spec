@@ -12,7 +12,7 @@ Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	8b50ff11c6d01d8df95b13cbe40e5b40
+# Source0-md5:	24f0c656c50bf3085ae8ffe555bd6fb0
 URL:		http://pear.php.net/package/Date_Holidays/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
