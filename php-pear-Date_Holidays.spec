@@ -17,16 +17,16 @@ URL:		http://pear.php.net/package/Date_Holidays/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 Requires:	php-pear-Date
-Requires:	php-pear-PEAR >= 1:1.3.1
+Requires:	php-pear-PEAR-core >= 1:1.3.1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Date_Holidays helps you calculating the dates and titles of
-holidays and other special celebrations. The calculation is
-driver-based so it is easy to add new drivers that calculate
-a country's holidays. The methods of the class can be used
-to get a holiday's date and title in various languages.
+Date_Holidays helps you calculating the dates and titles of holidays
+and other special celebrations. The calculation is driver-based so it
+is easy to add new drivers that calculate a country's holidays. The
+methods of the class can be used to get a holiday's date and title in
+various languages.
 
 In PEAR status of this package is: %{_status}.
 
