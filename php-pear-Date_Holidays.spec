@@ -7,20 +7,23 @@
 Summary:	%{_pearname} - driver based class to calculate holidays
 Summary(pl):	%{_pearname} - klasa oparta na sterownikach do wyliczania ¶wi±t
 Name:		php-pear-%{_pearname}
-Version:	0.15.0
-Release:	2
+Version:	0.15.1
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	24f0c656c50bf3085ae8ffe555bd6fb0
+# Source0-md5:	b5bb6b1c522bb51931e0147bfe1d2c85
 URL:		http://pear.php.net/package/Date_Holidays/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 Requires:	php-pear-Date
 Requires:	php-pear-PEAR-core >= 1:1.3.1
+Requires:	php-pear-XML_Serializer
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreq	'pear(Console/Getargs.*)'
 
 %description
 Date_Holidays helps you calculating the dates and titles of holidays
@@ -61,12 +64,17 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
 
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc install.log
+%doc install.log optional-packages.txt
 %doc docs/%{_pearname}/examples
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
