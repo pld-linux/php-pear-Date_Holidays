@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - driver based class to calculate holidays
-Summary(pl):	%{_pearname} - klasa oparta na sterownikach do wyliczania ¶wi±t
+Summary(pl.UTF-8):   %{_pearname} - klasa oparta na sterownikach do wyliczania Å›wiÄ…t
 Name:		php-pear-%{_pearname}
 Version:	0.17.0
 Release:	1
@@ -35,18 +35,18 @@ various languages.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Klasa Date_Holidays pomaga przy wyliczaniu dat i nazw ¶wi±t oraz
-innych specjalnych okazji. Obliczenia s± oparte na sterownikach, wiêc
-³atwo mo¿na dodaæ nowe sterowniki obliczaj±ce ¶wiêta narodowe. Metody
-klasy mog± byæ u¿ywane do uzyskania dat i nazw ¶wi±t w ró¿nych
-jêzykach.
+%description -l pl.UTF-8
+Klasa Date_Holidays pomaga przy wyliczaniu dat i nazw Å›wiÄ…t oraz
+innych specjalnych okazji. Obliczenia sÄ… oparte na sterownikach, wiÄ™c
+Å‚atwo moÅ¼na dodaÄ‡ nowe sterowniki obliczajÄ…ce Å›wiÄ™ta narodowe. Metody
+klasy mogÄ… byÄ‡ uÅ¼ywane do uzyskania dat i nazw Å›wiÄ…t w rÃ³Å¼nych
+jÄ™zykach.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -55,7 +55,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
