@@ -4,12 +4,12 @@
 Summary:	%{pearname} - driver based class to calculate holidays
 Summary(pl.UTF-8):	%{pearname} - klasa oparta na sterownikach do wyliczania świąt
 Name:		php-pear-%{pearname}
-Version:	0.21.5
+Version:	0.21.6
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	56e34ded3090a3d76bc70948b69c61ad
+# Source0-md5:	8d4387e5932ca44f6909017570c138ae
 URL:		http://pear.php.net/package/Date_Holidays/
 BuildRequires:	php-pear-PEAR >= 1:1.6.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
