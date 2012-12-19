@@ -4,16 +4,16 @@
 Summary:	%{pearname} - driver based class to calculate holidays
 Summary(pl.UTF-8):	%{pearname} - klasa oparta na sterownikach do wyliczania świąt
 Name:		php-pear-%{pearname}
-Version:	0.21.6
+Version:	0.21.7
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	8d4387e5932ca44f6909017570c138ae
+# Source0-md5:	611b860950763c9ed700fe3901899a80
 URL:		http://pear.php.net/package/Date_Holidays/
 BuildRequires:	php-pear-PEAR >= 1:1.6.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.580
+BuildRequires:	rpmbuild(macros) >= 1.654
 Requires:	php-pear
 Requires:	php-pear-Date
 Requires:	php-pear-PEAR-core >= 1:1.3.1
@@ -23,7 +23,7 @@ Obsoletes:	php-pear-Date_Holidays-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'pear(Console/Getargs.*)'
+%define	_noautoreq_pear Console/Getargs.php
 
 %description
 Date_Holidays helps you calculating the dates and titles of holidays
