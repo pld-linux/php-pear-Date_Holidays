@@ -1,6 +1,5 @@
 %define		status		alpha
 %define		pearname	Date_Holidays
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - driver based class to calculate holidays
 Summary(pl.UTF-8):	%{pearname} - klasa oparta na sterownikach do wyliczania świąt
 Name:		php-pear-%{pearname}
